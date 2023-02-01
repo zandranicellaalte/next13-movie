@@ -20,12 +20,31 @@ export default function RootLayout({ children }) {
       */}
       <head />
       <body className={`${(unbounded.className, montserrat.className)}`}>
-        <div className="nav">
+        <div className="navtop">
           <nav>
-            <h1>Popular Movies</h1>
+            <h1>Movies</h1>
+            <button type="submit" className="inputbutton">
+              Search
+            </button>
+            <input
+              type="search"
+              className="inputSearch"
+              placeholder="Search movie ..."
+            />
           </nav>
         </div>
-        <div className="childpages">{children}</div>
+        <div className="centerPage">
+          <div className="navleft">
+            <nav>
+              <p>Popularity</p>
+              <p>Release date</p>
+              <p>Vote Count</p>
+              <p>Vote Average</p>
+              <div className="divider"></div>
+            </nav>
+          </div>
+          <div className="childpages">{children}</div>
+        </div>
         <div className="footer">
           <footer>@zan</footer>
         </div>

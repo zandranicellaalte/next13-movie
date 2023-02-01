@@ -20,72 +20,73 @@ export default async function MovieDetail({ params }) {
 	);
 	const res = await data.json();
 	return (
-		<div style={{ display: 'flex', flexDirection: 'row' }}>
-			<Image
-				src={imgPath + res.poster_path}
-				width={1000}
-				height={1000}
-				alt={res.title}
-				priority
-				style={{
-					marginBottom: '30px',
-					height: '600px',
-					width: 'auto',
-				}}
-			/>
-			<div
-				style={{
-					paddingLeft: '20px',
-					display: 'flex',
-					flexDirection: 'column',
-				}}
-			>
-				<Image
-					src={imgPath + res.backdrop_path}
-					width={1000}
-					height={1000}
-					alt={res.title}
-					priority
-					style={{
-						marginBottom: '30px',
-						height: 'auto',
-						width: '700px',
-					}}
-				/>
-				<h1>{res.title}</h1>
-				<div
-					style={{
-						display: 'flex',
-						flexDirection: 'row',
-						justifyContent: 'space-between',
-						margin: '10px 0',
-					}}
-				>
-					<h4>Release Date: {res.release_date}</h4>
-					<h4>Runtime: {res.runtime} min</h4>
-				</div>
-				<div
-					style={{
-						backgroundColor: 'darkgreen',
-						width: '100%',
-						height: '40px',
-						marginBottom: '10px',
-						borderRadius: '15px',
-						display: 'flex',
-						justifyContent: 'center',
-						alignItems: 'center',
-					}}
-				>
-					<h4
-						style={{
-							textTransform: 'uppercase',
-						}}
-					>
-						{res.status}
-					</h4>
-				</div>
-				<p>{res.overview}</p>
-			</div>
-		</div>
-	);
+    <div style={{ display: 'flex', flexDirection: 'row' }}>
+      <Image
+        src={imgPath + res.poster_path}
+        width={1000}
+        height={1000}
+        alt={res.title}
+        priority
+        style={{
+          marginBottom: '30px',
+          height: '600px',
+          width: 'auto',
+          boxShadow: '2px 2px 25px black',
+        }}
+      />
+      <div
+        style={{
+          paddingLeft: '20px',
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
+        <Image
+          src={imgPath + res.backdrop_path}
+          width={1000}
+          height={1000}
+          alt={res.title}
+          priority
+          style={{
+            marginBottom: '30px',
+            height: 'auto',
+            width: '560px',
+          }}
+        />
+        <h1 style={{ color: '#FF6800' }}>{res.title}</h1>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            margin: '10px 0',
+          }}
+        >
+          <h4>Release Date: {res.release_date}</h4>
+          <h4>Runtime: {res.runtime} min</h4>
+        </div>
+        <div
+          style={{
+            backgroundColor: 'darkgreen',
+            width: '100%',
+            height: '40px',
+            marginBottom: '10px',
+            borderRadius: '15px',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <h4
+            style={{
+              textTransform: 'uppercase',
+            }}
+          >
+            {res.status}
+          </h4>
+        </div>
+        <p>{res.overview}</p>
+      </div>
+    </div>
+  );
 }
